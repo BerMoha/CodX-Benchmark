@@ -25,6 +25,6 @@ Architecture details are confidential — results are fully verifiable.
 | v1.0 | June 2026 | CodX v1 vs Claude Fable 5 |
 
 ## License
-Prompts and rubric: MIT License — Results: CC BY 4.0 — CodX architecture: Proprietary, Patent pending
+Prompts and rubric: MIT License — Results: CC BY 4.0 — CodX architecture: Proprietary
 
 © 2026 Solvatex — M. Berkani
