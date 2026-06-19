@@ -1,0 +1,7 @@
+﻿[18:08:15] [INFO] ==============================================
+[18:08:15] [INFO]  CodX vs Claude Sonnet 4.6 Benchmark v1.0
+[18:08:15] [INFO]  50 questions - 5 domains
+[18:08:15] [INFO] ==============================================
+[18:08:15] [INFO] Output : C:\Users\Berkani\Documents\GitHub\CodX-Benchmark\v1_0_results.csv
+[18:08:15] [INFO] Range  : Q1 to Q50
+[18:08:15] [WARN] Appending to: v1_0_results.csv
