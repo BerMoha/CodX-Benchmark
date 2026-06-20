@@ -1,51 +1,51 @@
-﻿test_id,domain,level,prompt_summary,quality_score,time_s,cost_usd,winner_model,date
-Q1,Generate Code,Easy,Return the first non-repeating character in a string.,0.77464759349823,6.65,0.001772,m4_security_2,2026-06-20
-Q2,Generate Code,Easy,Group users by country from a list of dictionaries.,0.7243495583534241,9.6,0.003046,m6_system_2,2026-06-20
-Q3,Generate Code,Easy,Fetch weather data with error handling.,0.7216664552688599,10.16,0.002427,m1_generate_1,2026-06-20
-Q4,Generate Code,Medium,SQL query for top customers in last 30 days.,0.7459239959716797,6.44,0.001048,m10_debug_2,2026-06-20
-Q5,Generate Code,Medium,Implement a Go worker pool.,0.7386002540588379,12.09,0.001985,m1_generate_1,2026-06-20
-Q6,Generate Code,Medium,Implement an O(1) LRU cache.,0.6862867474555969,12,0.004653,m4_security_2,2026-06-20
-Q7,Generate Code,Hard,Distributed rate limiter using Redis.,0.7724980115890503,10.48,0.002552,m1_generate_1,2026-06-20
-Q8,Generate Code,Hard,Kafka consumer with retries and DLQ.,0.769342303276062,12.09,0.002270,m10_debug_2,2026-06-20
-Q9,Generate Code,Hard,Trie with autocomplete support.,0.7026149034500122,10.47,0.003791,m4_security_2,2026-06-20
-Q10,Generate Code,Hard,URL shortener backend API.,0.7755051851272583,13.32,0.003787,m1_generate_1,2026-06-20
-Q11,Security Audit,Easy,Identify SQL injection vulnerability.,0.8167711496353149,7.53,0.001841,m6_system_2,2026-06-20
-Q12,Security Audit,Easy,Find hardcoded secret exposure.,0.8041422963142395,11.67,0.002086,m1_generate_1,2026-06-20
-Q13,Security Audit,Easy,Review weak authentication logic.,0.8119802474975586,13.78,0.003441,m6_system_2,2026-06-20
-Q14,Security Audit,Medium,Detect path traversal issue.,0.8042114973068237,11.76,0.001501,m6_system_2,2026-06-20
-Q15,Security Audit,Medium,Detect command injection risk.,0.801368772983551,12.43,0.003337,m4_security_2,2026-06-20
-Q16,Security Audit,Medium,Audit JWT validation logic.,0.8025476932525635,13.78,0.004811,m2_generate_2,2026-06-20
-Q17,Security Audit,Hard,Identify SSRF vulnerability.,0.8077276349067688,12.22,0.001458,m6_system_2,2026-06-20
-Q18,Security Audit,Hard,Audit public cloud storage configuration.,0.7375708222389221,18.61,0.004315,m1_generate_1,2026-06-20
-Q19,Security Audit,Hard,Review unsafe object deserialization.,0.8130505681037903,9.1,0.002101,m1_generate_1,2026-06-20
-Q20,Security Audit,Hard,Full login endpoint security assessment.,0.8818099498748779,15.7,0.003737,m1_generate_1,2026-06-20
-Q21,System Audit,Easy,Identify single points of failure.,0.8637331128120422,12.26,0.004174,m2_generate_2,2026-06-20
-Q22,System Audit,Easy,Audit logging strategy.,0.8448435068130493,19.28,0.004196,m6_system_2,2026-06-20
-Q23,System Audit,Easy,Evaluate backup frequency.,0.847193717956543,12.53,0.002198,m6_system_2,2026-06-20
-Q24,System Audit,Medium,Improve microservice resilience.,0.8789533972740173,13.9,0.004041,m1_generate_1,2026-06-20
-Q25,System Audit,Medium,Audit database scaling approach.,0.8062966465950012,13.32,0.004242,m2_generate_2,2026-06-20
-Q26,System Audit,Medium,Review CI/CD pipeline gaps.,0.831868052482605,10.76,0.002047,m9_debug_1,2026-06-20
-Q27,System Audit,Hard,Kubernetes cluster audit.,0.8573449850082397,12.98,0.004433,m1_generate_1,2026-06-20
-Q28,System Audit,Hard,Incident response readiness review.,0.8581402897834778,9.16,0.003795,m1_generate_1,2026-06-20
-Q29,System Audit,Hard,Event-driven architecture audit.,0.8327533006668091,11.57,0.004458,m1_generate_1,2026-06-20
-Q30,System Audit,Hard,Enterprise architecture modernization.,0.8762071132659912,10.95,0.003408,m10_debug_2,2026-06-20
-Q31,Debug & Fix,Easy,Fix off-by-one error.,0.6059234738349915,6.78,0.001048,m1_generate_1,2026-06-20
-Q32,Debug & Fix,Easy,Fix null reference bug.,0.8286283612251282,1.86,0.000334,m2_generate_2,2026-06-20
-Q33,Debug & Fix,Easy,Fix infinite loop.,0.7953163385391235,5.14,0.001146,m1_generate_1,2026-06-20
-Q34,Debug & Fix,Medium,Fix async/await bug.,0.7909791469573975,6.33,0.002139,m4_security_2,2026-06-20
-Q35,Debug & Fix,Medium,Fix race condition.,0.8353195190429688,9.24,0.001398,m1_generate_1,2026-06-20
-Q36,Debug & Fix,Medium,Fix database connection leak.,0.8270199298858643,6.56,0.001103,m1_generate_1,2026-06-20
-Q37,Debug & Fix,Hard,Resolve deadlock.,0.8588285446166992,8.08,0.004340,m1_generate_1,2026-06-20
-Q38,Debug & Fix,Hard,Fix memory leak.,0.7945629358291626,6.12,0.001138,m1_generate_1,2026-06-20
-Q39,Debug & Fix,Hard,Investigate CrashLoopBackOff.,0.7263348698616028,7.67,0.002627,m6_system_2,2026-06-20
-Q40,Debug & Fix,Hard,Analyze production outage.,0.804894208908081,4.87,0.000650,m1_generate_1,2026-06-20
-Q41,Code Review,Easy,Improve readability.,0.8466125130653381,2.05,0.000302,m1_generate_1,2026-06-20
-Q42,Code Review,Easy,Remove duplicate logic.,0.8513740301132202,4.93,0.000536,m1_generate_1,2026-06-20
-Q43,Code Review,Easy,Improve error handling.,0.8445589542388916,3.86,0.000237,m1_generate_1,2026-06-20
-Q44,Code Review,Medium,Optimize performance.,0.7632949948310852,3.03,0.000415,m2_generate_2,2026-06-20
-Q45,Code Review,Medium,Review resource management.,0.8213677406311035,5.69,0.000546,m1_generate_1,2026-06-20
-Q46,Code Review,Medium,Improve API design.,0.8312885761260986,2.56,0.000364,m1_generate_1,2026-06-20
-Q47,Code Review,Hard,Review database scalability.,0.8672452569007874,10.86,0.000680,m1_generate_1,2026-06-20
-Q48,Code Review,Hard,Review XSS vulnerability.,0.8420260548591614,3.8,0.000567,m2_generate_2,2026-06-20
-Q49,Code Review,Hard,Review concurrent access bug.,0.86653733253479,7.11,0.000873,m2_generate_2,2026-06-20
-Q50,Code Review,Hard,Full service review.,0.8138846755027771,5.25,0.000443,m1_generate_1,2026-06-20
+﻿test_id,domain,level,prompt_summary,quality_score,time_s,cost_usd,date
+Q1,Generate Code,Easy,Return the first non-repeating character in a string.,0.77464759349823,6.65,0.001772,2026-06-20
+Q2,Generate Code,Easy,Group users by country from a list of dictionaries.,0.7243495583534241,9.6,0.003046,2026-06-20
+Q3,Generate Code,Easy,Fetch weather data with error handling.,0.7216664552688599,10.16,0.002427,2026-06-20
+Q4,Generate Code,Medium,SQL query for top customers in last 30 days.,0.7459239959716797,6.44,0.001048,2026-06-20
+Q5,Generate Code,Medium,Implement a Go worker pool.,0.7386002540588379,12.09,0.001985,2026-06-20
+Q6,Generate Code,Medium,Implement an O(1) LRU cache.,0.6862867474555969,12,0.004653,2026-06-20
+Q7,Generate Code,Hard,Distributed rate limiter using Redis.,0.7724980115890503,10.48,0.002552,2026-06-20
+Q8,Generate Code,Hard,Kafka consumer with retries and DLQ.,0.769342303276062,12.09,0.002270,2026-06-20
+Q9,Generate Code,Hard,Trie with autocomplete support.,0.7026149034500122,10.47,0.003791,2026-06-20
+Q10,Generate Code,Hard,URL shortener backend API.,0.7755051851272583,13.32,0.003787,2026-06-20
+Q11,Security Audit,Easy,Identify SQL injection vulnerability.,0.8167711496353149,7.53,0.001841,2026-06-20
+Q12,Security Audit,Easy,Find hardcoded secret exposure.,0.8041422963142395,11.67,0.002086,2026-06-20
+Q13,Security Audit,Easy,Review weak authentication logic.,0.8119802474975586,13.78,0.003441,2026-06-20
+Q14,Security Audit,Medium,Detect path traversal issue.,0.8042114973068237,11.76,0.001501,2026-06-20
+Q15,Security Audit,Medium,Detect command injection risk.,0.801368772983551,12.43,0.003337,2026-06-20
+Q16,Security Audit,Medium,Audit JWT validation logic.,0.8025476932525635,13.78,0.004811,2026-06-20
+Q17,Security Audit,Hard,Identify SSRF vulnerability.,0.8077276349067688,12.22,0.001458,2026-06-20
+Q18,Security Audit,Hard,Audit public cloud storage configuration.,0.7375708222389221,18.61,0.004315,2026-06-20
+Q19,Security Audit,Hard,Review unsafe object deserialization.,0.8130505681037903,9.1,0.002101,2026-06-20
+Q20,Security Audit,Hard,Full login endpoint security assessment.,0.8818099498748779,15.7,0.003737,2026-06-20
+Q21,System Audit,Easy,Identify single points of failure.,0.8637331128120422,12.26,0.004174,2026-06-20
+Q22,System Audit,Easy,Audit logging strategy.,0.8448435068130493,19.28,0.004196,2026-06-20
+Q23,System Audit,Easy,Evaluate backup frequency.,0.847193717956543,12.53,0.002198,2026-06-20
+Q24,System Audit,Medium,Improve microservice resilience.,0.8789533972740173,13.9,0.004041,2026-06-20
+Q25,System Audit,Medium,Audit database scaling approach.,0.8062966465950012,13.32,0.004242,2026-06-20
+Q26,System Audit,Medium,Review CI/CD pipeline gaps.,0.831868052482605,10.76,0.002047,2026-06-20
+Q27,System Audit,Hard,Kubernetes cluster audit.,0.8573449850082397,12.98,0.004433,2026-06-20
+Q28,System Audit,Hard,Incident response readiness review.,0.8581402897834778,9.16,0.003795,2026-06-20
+Q29,System Audit,Hard,Event-driven architecture audit.,0.8327533006668091,11.57,0.004458,2026-06-20
+Q30,System Audit,Hard,Enterprise architecture modernization.,0.8762071132659912,10.95,0.003408,2026-06-20
+Q31,Debug & Fix,Easy,Fix off-by-one error.,0.6059234738349915,6.78,0.001048,2026-06-20
+Q32,Debug & Fix,Easy,Fix null reference bug.,0.8286283612251282,1.86,0.000334,2026-06-20
+Q33,Debug & Fix,Easy,Fix infinite loop.,0.7953163385391235,5.14,0.001146,2026-06-20
+Q34,Debug & Fix,Medium,Fix async/await bug.,0.7909791469573975,6.33,0.002139,2026-06-20
+Q35,Debug & Fix,Medium,Fix race condition.,0.8353195190429688,9.24,0.001398,2026-06-20
+Q36,Debug & Fix,Medium,Fix database connection leak.,0.8270199298858643,6.56,0.001103,2026-06-20
+Q37,Debug & Fix,Hard,Resolve deadlock.,0.8588285446166992,8.08,0.004340,2026-06-20
+Q38,Debug & Fix,Hard,Fix memory leak.,0.7945629358291626,6.12,0.001138,2026-06-20
+Q39,Debug & Fix,Hard,Investigate CrashLoopBackOff.,0.7263348698616028,7.67,0.002627,2026-06-20
+Q40,Debug & Fix,Hard,Analyze production outage.,0.804894208908081,4.87,0.000650,2026-06-20
+Q41,Code Review,Easy,Improve readability.,0.8466125130653381,2.05,0.000302,2026-06-20
+Q42,Code Review,Easy,Remove duplicate logic.,0.8513740301132202,4.93,0.000536,2026-06-20
+Q43,Code Review,Easy,Improve error handling.,0.8445589542388916,3.86,0.000237,2026-06-20
+Q44,Code Review,Medium,Optimize performance.,0.7632949948310852,3.03,0.000415,2026-06-20
+Q45,Code Review,Medium,Review resource management.,0.8213677406311035,5.69,0.000546,2026-06-20
+Q46,Code Review,Medium,Improve API design.,0.8312885761260986,2.56,0.000364,2026-06-20
+Q47,Code Review,Hard,Review database scalability.,0.8672452569007874,10.86,0.000680,2026-06-20
+Q48,Code Review,Hard,Review XSS vulnerability.,0.8420260548591614,3.8,0.000567,2026-06-20
+Q49,Code Review,Hard,Review concurrent access bug.,0.86653733253479,7.11,0.000873,2026-06-20
+Q50,Code Review,Hard,Full service review.,0.8138846755027771,5.25,0.000443,2026-06-20
