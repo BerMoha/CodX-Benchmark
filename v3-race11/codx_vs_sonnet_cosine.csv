@@ -1,0 +1,51 @@
+﻿test_id,domain,level,prompt_summary,codx_score,codx_time_s,codx_cost_usd,codx_winner_model,sonnet_score,sonnet_time_s,sonnet_cost_usd,winner,date
+Q1,Generate Code,Easy,Return the first non-repeating character in a string.,0.797518,9.2,0.002241,m6_system_2,0.744792,18,0.019449,CodX,2026-06-20
+Q2,Generate Code,Easy,Group users by country from a list of dictionaries.,0.713799,10.47,0.001203,m6_system_2,0.637867,25.84,0.033471,CodX,2026-06-20
+Q3,Generate Code,Easy,Fetch weather data with error handling.,0.71385,10.25,0.003935,m5_system_1,0.707813,44.1,0.061557,CodX,2026-06-20
+Q4,Generate Code,Medium,SQL query for top customers in last 30 days.,0.762905,7.27,0.001652,m10_debug_2,0.725093,17.56,0.020094,CodX,2026-06-20
+Q5,Generate Code,Medium,Implement a Go worker pool.,0.707894,8.3,0.002723,m1_generate_1,0.685851,45.16,0.061554,CodX,2026-06-20
+Q6,Generate Code,Medium,Implement an O(1) LRU cache.,0.653307,10.39,0.002164,m1_generate_1,0.638552,29.44,0.037134,CodX,2026-06-20
+Q7,Generate Code,Hard,Distributed rate limiter using Redis.,0.772364,13.54,0.004013,m1_generate_1,0.785162,43.83,0.061557,Claude Sonnet,2026-06-20
+Q8,Generate Code,Hard,Kafka consumer with retries and DLQ.,0.766419,14.38,0.004082,m5_system_1,0.754441,39.24,0.061566,CodX,2026-06-20
+Q9,Generate Code,Hard,Trie with autocomplete support.,0.692544,9.99,0.003797,m6_system_2,0.699484,53.61,0.061557,Claude Sonnet,2026-06-20
+Q10,Generate Code,Hard,URL shortener backend API.,0.751793,15.66,0.004649,m1_generate_1,0.752497,38.93,0.061551,tie,2026-06-20
+Q11,Security Audit,Easy,Identify SQL injection vulnerability.,0.855282,6.75,0.002086,m6_system_2,0.728495,20.32,0.019581,CodX,2026-06-20
+Q12,Security Audit,Easy,Find hardcoded secret exposure.,0.802978,14.02,0.003487,m6_system_2,0.736018,7.98,0.005064,CodX,2026-06-20
+Q13,Security Audit,Easy,Review weak authentication logic.,0.815345,11.91,0.001572,m6_system_2,0.719944,51.81,0.061563,CodX,2026-06-20
+Q14,Security Audit,Medium,Detect path traversal issue.,0.77446,9.46,0.001645,m6_system_2,0.685573,26.52,0.025584,CodX,2026-06-20
+Q15,Security Audit,Medium,Detect command injection risk.,0.831376,12.59,0.002092,m1_generate_1,0.68892,26.58,0.024021,CodX,2026-06-20
+Q16,Security Audit,Medium,Audit JWT validation logic.,0.794879,8.78,0.002953,m2_generate_2,0.736191,55.18,0.061566,CodX,2026-06-20
+Q17,Security Audit,Hard,Identify SSRF vulnerability.,0.815848,11.93,0.001509,m6_system_2,0.702897,40.44,0.041829,CodX,2026-06-20
+Q18,Security Audit,Hard,Audit public cloud storage configuration.,0.755994,12.24,0.003325,m1_generate_1,0.73631,49.06,0.061569,CodX,2026-06-20
+Q19,Security Audit,Hard,Review unsafe object deserialization.,0.800199,15.33,0.004274,m1_generate_1,0.783493,53.67,0.057039,CodX,2026-06-20
+Q20,Security Audit,Hard,Full login endpoint security assessment.,0.8859,13.28,0.00447,m1_generate_1,0.691605,49.86,0.061566,CodX,2026-06-20
+Q21,System Audit,Easy,Identify single points of failure.,0.893238,14.99,0.00451,m1_generate_1,0.647579,10.34,0.008229,CodX,2026-06-20
+Q22,System Audit,Easy,Audit logging strategy.,0.85349,12.89,0.002217,m1_generate_1,0.781008,68.05,0.061563,CodX,2026-06-20
+Q23,System Audit,Easy,Evaluate backup frequency.,0.818078,14.15,0.003874,m1_generate_1,0.676541,8.44,0.005658,CodX,2026-06-20
+Q24,System Audit,Medium,Improve microservice resilience.,0.875088,13.05,0.004588,m1_generate_1,0.657611,48.12,0.061569,CodX,2026-06-20
+Q25,System Audit,Medium,Audit database scaling approach.,0.818241,13.17,0.004796,m2_generate_2,0.718913,70.72,0.060756,CodX,2026-06-20
+Q26,System Audit,Medium,Review CI/CD pipeline gaps.,0.856134,11.43,0.002599,m1_generate_1,0.699247,66.34,0.061569,CodX,2026-06-20
+Q27,System Audit,Hard,Kubernetes cluster audit.,0.861089,14.04,0.004814,m1_generate_1,0.820539,49.91,0.061563,CodX,2026-06-20
+Q28,System Audit,Hard,Incident response readiness review.,0.868856,17.29,0.00426,m1_generate_1,0.728973,56.09,0.061569,CodX,2026-06-20
+Q29,System Audit,Hard,Event-driven architecture audit.,0.865037,11.92,0.002416,m2_generate_2,0.75653,70.7,0.061566,CodX,2026-06-20
+Q30,System Audit,Hard,Enterprise architecture modernization.,0.861698,15.33,0.002434,m1_generate_1,0.782215,53.41,0.061563,CodX,2026-06-20
+Q31,Debug & Fix,Easy,Fix off-by-one error.,0.822113,3.95,0.000422,m1_generate_1,0.63645,3.01,0.001707,CodX,2026-06-20
+Q32,Debug & Fix,Easy,Fix null reference bug.,0.850494,4.71,0.000711,m1_generate_1,0.766891,2.88,0.001878,CodX,2026-06-20
+Q33,Debug & Fix,Easy,Fix infinite loop.,0.765212,6.29,0.000943,m1_generate_1,0.769557,1.98,0.001635,tie,2026-06-20
+Q34,Debug & Fix,Medium,Fix async/await bug.,0.862011,3.1,0.000727,m1_generate_1,0.767588,14.85,0.014391,CodX,2026-06-20
+Q35,Debug & Fix,Medium,Fix race condition.,0.81782,6.54,0.000791,m1_generate_1,0.787656,2.64,0.00177,CodX,2026-06-20
+Q36,Debug & Fix,Medium,Fix database connection leak.,0.794603,11.24,0.001633,m6_system_2,0.693143,37.24,0.041223,CodX,2026-06-20
+Q37,Debug & Fix,Hard,Resolve deadlock.,0.838201,8.76,0.001692,m1_generate_1,0.644187,19.48,0.020538,CodX,2026-06-20
+Q38,Debug & Fix,Hard,Fix memory leak.,0.744834,7.69,0.001868,m1_generate_1,0.77059,2.25,0.001575,Claude Sonnet,2026-06-20
+Q39,Debug & Fix,Hard,Investigate CrashLoopBackOff.,0.740905,8.5,0.000942,m1_generate_1,0.689424,56.51,0.061611,CodX,2026-06-20
+Q40,Debug & Fix,Hard,Analyze production outage.,0.855152,2.44,0.000387,m6_system_2,0.770705,9.77,0.004701,CodX,2026-06-20
+Q41,Code Review,Easy,Improve readability.,0.850643,2.72,0.000653,m1_generate_1,0.758831,1.87,0.000579,CodX,2026-06-20
+Q42,Code Review,Easy,Remove duplicate logic.,0.823576,6.12,0.001057,m1_generate_1,0.727085,2.93,0.000516,CodX,2026-06-20
+Q43,Code Review,Easy,Improve error handling.,0.826429,3.11,0.000753,m10_debug_2,0.725046,2.79,0.001404,CodX,2026-06-20
+Q44,Code Review,Medium,Optimize performance.,0.836921,2.89,0.000365,m1_generate_1,0.612279,4.69,0.003051,CodX,2026-06-20
+Q45,Code Review,Medium,Review resource management.,0.815871,5.5,0.000731,m7_review_1,0.698143,7.82,0.003801,CodX,2026-06-20
+Q46,Code Review,Medium,Improve API design.,0.856377,8.21,0.001227,m1_generate_1,0.754062,5.41,0.004374,CodX,2026-06-20
+Q47,Code Review,Hard,Review database scalability.,0.820905,9.38,0.002124,m1_generate_1,0.67986,52.28,0.061584,CodX,2026-06-20
+Q48,Code Review,Hard,Review XSS vulnerability.,0.839953,8.43,0.001144,m1_generate_1,0.721185,52.62,0.057897,CodX,2026-06-20
+Q49,Code Review,Hard,Review concurrent access bug.,0.869546,3.97,0.000803,m1_generate_1,0.687142,9.87,0.005244,CodX,2026-06-20
+Q50,Code Review,Hard,Full service review.,0.814122,2.64,0.000391,m1_generate_1,0.691743,5.23,0.003411,CodX,2026-06-20
