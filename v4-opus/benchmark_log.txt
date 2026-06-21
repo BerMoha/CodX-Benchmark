@@ -1,0 +1,374 @@
+CodX vs Claude Opus 4.6 (V4) - Benchmark Log
+Cosine Similarity Benchmark - 50 questions - 5 domains
+Scorer: cosine similarity (local embedding)
+Date: 2026-06-20
+==============================================
+
+--- Run 1: Q1-Q8 (17:08 - 17:16) ---
+
+[17:08:22] [1/50] Q1 - Generate Code - Easy
+  Q: Write a function that checks if two strings are anagrams of each other.
+  CodX  : 13.22s | score: 0.7886 | cost: $0.004237
+  Opus  : 16.75s | tokens: 47 in / 1062 out | cost: $0.080355
+  Opus score (cosine): 0.736
+  >>> WINNER: CodX (0.7886 vs 0.736)
+
+[17:08:54] [2/50] Q2 - Generate Code - Easy
+  Q: Build a CLI tool that converts CSV to JSON.
+  CodX  : 14.32s | score: 0.8178 | cost: $0.004652
+  Opus  : 49.94s | tokens: 41 in / 4096 out | cost: $0.307815
+  Opus score (cosine): 0.8008
+  >>> WINNER: CodX (0.8178 vs 0.8008)
+
+[17:10:01] [3/50] Q3 - Generate Code - Easy
+  Q: Implement a stack using two queues.
+  CodX  : 14.02s | score: 0.6911 | cost: $0.0035
+  Opus  : 21.19s | tokens: 40 in / 1350 out | cost: $0.10185
+  Opus score (cosine): 0.6631
+  >>> WINNER: CodX (0.6911 vs 0.6631)
+
+[17:10:38] [4/50] Q4 - Generate Code - Medium
+  Q: Build a REST API endpoint that paginates and filters a product catalog.
+  CodX  : 12.54s | score: 0.7265 | cost: $0.002865
+  Opus  : 44.83s | tokens: 46 in / 4096 out | cost: $0.30789
+  Opus score (cosine): 0.7307
+  >>> WINNER: tie (0.7265 vs 0.7307)
+
+[17:11:38] [5/50] Q5 - Generate Code - Medium
+  Q: Implement a thread-safe bounded blocking queue in Java.
+  CodX  : 11.98s | score: 0.7941 | cost: $0.004247
+  Opus  : 44.24s | tokens: 43 in / 4096 out | cost: $0.307845
+  Opus score (cosine): 0.7912
+  >>> WINNER: tie (0.7941 vs 0.7912)
+
+[17:12:37] [6/50] Q6 - Generate Code - Medium
+  Q: Write a recursive descent parser for arithmetic expressions with operator precedence.
+  CodX  : 14.12s | score: 0.8075 | cost: $0.004654
+  Opus  : 50.62s | tokens: 44 in / 4096 out | cost: $0.30786
+  Opus score (cosine): 0.8063
+  >>> WINNER: tie (0.8075 vs 0.8063)
+
+[17:13:44] [7/50] Q7 - Generate Code - Hard
+  Q: Implement a B-tree with insert, delete, and range query operations.
+  CodX  : 11.2s | score: 0.7226 | cost: $0.004289
+  Opus  : 56.08s | tokens: 47 in / 4096 out | cost: $0.307905
+  Opus score (cosine): 0.7158
+  >>> WINNER: CodX (0.7226 vs 0.7158)
+
+[17:14:54] [8/50] Q8 - Generate Code - Hard
+  Q: Build a real-time collaborative text editor backend using operational transforms.
+  CodX  : 11.61s | score: 0.7392 | cost: $0.002952
+  Opus  : 52.91s | tokens: 44 in / 4096 out | cost: $0.30786
+  Opus score (cosine): 0.72
+  >>> WINNER: CodX (0.7392 vs 0.72)
+
+--- Run 2: Q9-Q50 (17:34 - 18:27) ---
+
+[17:34:25] [9/50] Q9 - Generate Code - Hard
+  Q: Implement a consistent hashing ring with virtual nodes and replication.
+  CodX  : 22.79s | score: 0.738 | cost: $0.005991
+  Opus  : 53.16s | tokens: 45 in / 4096 out | cost: $0.307875
+  Opus score (cosine): 0.7335
+  >>> WINNER: tie (0.738 vs 0.7335)
+
+[17:35:43] [10/50] Q10 - Generate Code - Hard
+  Q: Build an event sourcing framework with snapshots and replay.
+  CodX  : 13.86s | score: 0.6892 | cost: $0.004654
+  Opus  : 48.42s | tokens: 43 in / 4096 out | cost: $0.307845
+  Opus score (cosine): 0.6769
+  >>> WINNER: CodX (0.6892 vs 0.6769)
+
+[17:36:48] [11/50] Q11 - Security Audit - Easy
+  Q: Audit a file upload endpoint for unrestricted file type vulnerabilities.
+  CodX  : 12.92s | score: 0.7878 | cost: $0.002948
+  Opus  : 61.5s | tokens: 51 in / 4096 out | cost: $0.307965
+  Opus score (cosine): 0.7891
+  >>> WINNER: tie (0.7878 vs 0.7891)
+
+[17:38:04] [12/50] Q12 - Security Audit - Easy
+  Q: Review a password reset flow for account enumeration risks.
+  CodX  : 13.74s | score: 0.8138 | cost: $0.004815
+  Opus  : 64.49s | tokens: 47 in / 4078 out | cost: $0.306555
+  Opus score (cosine): 0.7249
+  >>> WINNER: CodX (0.8138 vs 0.7249)
+
+[17:39:25] [13/50] Q13 - Security Audit - Easy
+  Q: Check an API response for excessive data exposure in error messages.
+  CodX  : 12.34s | score: 0.8218 | cost: $0.003598
+  Opus  : 58.76s | tokens: 48 in / 4096 out | cost: $0.30792
+  Opus score (cosine): 0.671
+  >>> WINNER: CodX (0.8218 vs 0.671)
+
+[17:40:39] [14/50] Q14 - Security Audit - Medium
+  Q: Audit an OAuth2 implementation for token leakage via redirect URI manipulation.
+  CodX  : 17.03s | score: 0.7678 | cost: $0.006188
+  Opus  : 62.43s | tokens: 53 in / 4096 out | cost: $0.307995
+  Opus score (cosine): 0.7837
+  >>> WINNER: Claude Opus (0.7678 vs 0.7837)
+
+[17:42:00] [15/50] Q15 - Security Audit - Medium
+  Q: Review a GraphQL API for introspection abuse and nested query DoS.
+  CodX  : 16.6s | score: 0.7852 | cost: $0.006064
+  Opus  : 62.03s | tokens: 52 in / 4096 out | cost: $0.30798
+  Opus score (cosine): 0.7692
+  >>> WINNER: CodX (0.7852 vs 0.7692)
+
+[17:43:21] [16/50] Q16 - Security Audit - Medium
+  Q: Audit a WebSocket connection handler for origin validation and message injection.
+  CodX  : 13.52s | score: 0.8256 | cost: $0.004818
+  Opus  : 57.23s | tokens: 50 in / 4096 out | cost: $0.30795
+  Opus score (cosine): 0.8126
+  >>> WINNER: CodX (0.8256 vs 0.8126)
+
+[17:44:34] [17/50] Q17 - Security Audit - Hard
+  Q: Review a multi-tenant SaaS application for cross-tenant data leakage.
+  CodX  : 15.94s | score: 0.8256 | cost: $0.003735
+  Opus  : 59.17s | tokens: 54 in / 4096 out | cost: $0.30801
+  Opus score (cosine): 0.7547
+  >>> WINNER: CodX (0.8256 vs 0.7547)
+
+[17:45:52] [18/50] Q18 - Security Audit - Hard
+  Q: Audit a cryptographic key management system for key rotation and storage flaws.
+  CodX  : 16.97s | score: 0.7743 | cost: $0.004819
+  Opus  : 57.48s | tokens: 52 in / 4096 out | cost: $0.30798
+  Opus score (cosine): 0.7352
+  >>> WINNER: CodX (0.7743 vs 0.7352)
+
+[17:47:09] [19/50] Q19 - Security Audit - Hard
+  Q: Analyze a microservices mesh for service-to-service authentication bypass.
+  CodX  : 13.97s | score: 0.7696 | cost: $0.004818
+  Opus  : 60.66s | tokens: 52 in / 4096 out | cost: $0.30798
+  Opus score (cosine): 0.7278
+  >>> WINNER: CodX (0.7696 vs 0.7278)
+
+[17:48:26] [20/50] Q20 - Security Audit - Hard
+  Q: Full security assessment of a payment processing webhook handler.
+  CodX  : 17.5s | score: 0.7808 | cost: $0.004816
+  Opus  : 57.03s | tokens: 46 in / 4096 out | cost: $0.30789
+  Opus score (cosine): 0.7305
+  >>> WINNER: CodX (0.7808 vs 0.7305)
+
+[17:49:43] [21/50] Q21 - System Audit - Easy
+  Q: Evaluate DNS configuration for redundancy and failover.
+  CodX  : 13.67s | score: 0.809 | cost: $0.004818
+  Opus  : 56.32s | tokens: 47 in / 4096 out | cost: $0.307905
+  Opus score (cosine): 0.7542
+  >>> WINNER: CodX (0.809 vs 0.7542)
+
+[17:50:55] [22/50] Q22 - System Audit - Easy
+  Q: Audit a cron job scheduler for silent failure detection.
+  CodX  : 12.96s | score: 0.8318 | cost: $0.00307
+  Opus  : 55.87s | tokens: 48 in / 4096 out | cost: $0.30792
+  Opus score (cosine): 0.8088
+  >>> WINNER: CodX (0.8318 vs 0.8088)
+
+[17:52:06] [23/50] Q23 - System Audit - Easy
+  Q: Review a health check endpoint for accuracy and depth.
+  CodX  : 16.49s | score: 0.8241 | cost: $0.004758
+  Opus  : 57.22s | tokens: 46 in / 4096 out | cost: $0.30789
+  Opus score (cosine): 0.7032
+  >>> WINNER: CodX (0.8241 vs 0.7032)
+
+[17:53:22] [24/50] Q24 - System Audit - Medium
+  Q: Audit a message queue system for message loss and ordering guarantees.
+  CodX  : 12.29s | score: 0.801 | cost: $0.003752
+  Opus  : 58.69s | tokens: 50 in / 4096 out | cost: $0.30795
+  Opus score (cosine): 0.7625
+  >>> WINNER: CodX (0.801 vs 0.7625)
+
+[17:54:35] [25/50] Q25 - System Audit - Medium
+  Q: Review a caching layer for cache stampede and thundering herd problems.
+  CodX  : 15.79s | score: 0.8347 | cost: $0.004235
+  Opus  : 61.87s | tokens: 52 in / 4096 out | cost: $0.30798
+  Opus score (cosine): 0.6584
+  >>> WINNER: CodX (0.8347 vs 0.6584)
+
+[17:55:55] [26/50] Q26 - System Audit - Medium
+  Q: Audit a blue-green deployment pipeline for rollback safety.
+  CodX  : 12.86s | score: 0.848 | cost: $0.004158
+  Opus  : 60.99s | tokens: 49 in / 4096 out | cost: $0.307935
+  Opus score (cosine): 0.7602
+  >>> WINNER: CodX (0.848 vs 0.7602)
+
+[17:57:12] [27/50] Q27 - System Audit - Hard
+  Q: Review a distributed tracing implementation for observability gaps.
+  CodX  : 14.8s | score: 0.8576 | cost: $0.003869
+  Opus  : 64.85s | tokens: 47 in / 4096 out | cost: $0.307905
+  Opus score (cosine): 0.7264
+  >>> WINNER: CodX (0.8576 vs 0.7264)
+
+[17:58:34] [28/50] Q28 - System Audit - Hard
+  Q: Audit a multi-region active-active database replication strategy.
+  CodX  : 18.14s | score: 0.8402 | cost: $0.00398
+  Opus  : 56.91s | tokens: 50 in / 4096 out | cost: $0.30795
+  Opus score (cosine): 0.7845
+  >>> WINNER: CodX (0.8402 vs 0.7845)
+
+[17:59:51] [29/50] Q29 - System Audit - Hard
+  Q: Review a chaos engineering framework for blast radius containment.
+  CodX  : 16.33s | score: 0.8401 | cost: $0.004125
+  Opus  : 64.12s | tokens: 47 in / 4096 out | cost: $0.307905
+  Opus score (cosine): 0.8128
+  >>> WINNER: CodX (0.8401 vs 0.8128)
+
+[18:01:14] [30/50] Q30 - System Audit - Hard
+  Q: Full audit of a zero-downtime migration strategy for a 10TB database.
+  CodX  : 16.16s | score: 0.8279 | cost: $0.004141
+  Opus  : 62.48s | tokens: 53 in / 4096 out | cost: $0.307995
+  Opus score (cosine): 0.7982
+  >>> WINNER: CodX (0.8279 vs 0.7982)
+
+[18:02:35] [31/50] Q31 - Debug & Fix - Easy
+  Q: Fix a timezone conversion bug that shows wrong times for UTC offsets.
+  CodX  : 3.18s | score: 0.915 | cost: $0.000634
+  Opus  : 29.62s | tokens: 60 in / 1926 out | cost: $0.14535
+  Opus score (cosine): 0.7805
+  >>> WINNER: CodX (0.915 vs 0.7805)
+
+[18:03:10] [32/50] Q32 - Debug & Fix - Easy
+  Q: Fix a CSS flexbox layout that breaks on mobile viewport widths.
+  CodX  : 8.37s | score: 0.909 | cost: $0.001043
+  Opus  : 27s | tokens: 60 in / 1565 out | cost: $0.118275
+  Opus score (cosine): 0.8466
+  >>> WINNER: CodX (0.909 vs 0.8466)
+
+[18:03:48] [33/50] Q33 - Debug & Fix - Easy
+  Q: Fix a pagination bug that skips records when items are deleted mid-page.
+  CodX  : 14.19s | score: 0.8223 | cost: $0.002757
+  Opus  : 45.96s | tokens: 62 in / 2627 out | cost: $0.197955
+  Opus score (cosine): 0.7965
+  >>> WINNER: CodX (0.8223 vs 0.7965)
+
+[18:04:50] [34/50] Q34 - Debug & Fix - Medium
+  Q: Fix a connection pool exhaustion causing intermittent HTTP 503 errors.
+  CodX  : 15.34s | score: 0.8003 | cost: $0.003045
+  Opus  : 54.33s | tokens: 62 in / 3582 out | cost: $0.26958
+  Opus score (cosine): 0.7281
+  >>> WINNER: CodX (0.8003 vs 0.7281)
+
+[18:06:02] [35/50] Q35 - Debug & Fix - Medium
+  Q: Fix a circular dependency between three Python modules causing ImportError.
+  CodX  : 10.03s | score: 0.8211 | cost: $0.003025
+  Opus  : 25.28s | tokens: 58 in / 1575 out | cost: $0.118995
+  Opus score (cosine): 0.7751
+  >>> WINNER: CodX (0.8211 vs 0.7751)
+
+[18:06:40] [36/50] Q36 - Debug & Fix - Medium
+  Q: Fix a React useEffect hook that causes an infinite re-render loop with stale closures.
+  CodX  : 7.84s | score: 0.8931 | cost: $0.002342
+  Opus  : 43.74s | tokens: 66 in / 2923 out | cost: $0.220215
+  Opus score (cosine): 0.8676
+  >>> WINNER: CodX (0.8931 vs 0.8676)
+
+[18:07:34] [37/50] Q37 - Debug & Fix - Hard
+  Q: Debug a distributed transaction that leaves phantom records across two databases.
+  CodX  : 8.62s | score: 0.7757 | cost: $0.002261
+  Opus  : 56.13s | tokens: 58 in / 4096 out | cost: $0.30807
+  Opus score (cosine): 0.7768
+  >>> WINNER: tie (0.7757 vs 0.7768)
+
+[18:08:41] [38/50] Q38 - Debug & Fix - Hard
+  Q: Fix a garbage collection pause causing latency spikes in a Java gRPC service.
+  CodX  : 12.05s | score: 0.8377 | cost: $0.001858
+  Opus  : 62.24s | tokens: 64 in / 4096 out | cost: $0.30816
+  Opus score (cosine): 0.8629
+  >>> WINNER: Claude Opus (0.8377 vs 0.8629)
+
+[18:09:58] [39/50] Q39 - Debug & Fix - Hard
+  Q: Debug a split-brain scenario in a Redis Sentinel cluster after network partition.
+  CodX  : 14.6s | score: 0.8398 | cost: $0.00404
+  Opus  : 56.31s | tokens: 62 in / 4096 out | cost: $0.30813
+  Opus score (cosine): 0.7888
+  >>> WINNER: CodX (0.8398 vs 0.7888)
+
+[18:11:11] [40/50] Q40 - Debug & Fix - Hard
+  Q: Fix a data corruption bug caused by concurrent schema migrations on a live PostgreSQL database.
+  CodX  : 13.76s | score: 0.8792 | cost: $0.001646
+  Opus  : 63s | tokens: 63 in / 4096 out | cost: $0.308145
+  Opus score (cosine): 0.8776
+  >>> WINNER: tie (0.8792 vs 0.8776)
+
+[18:12:30] [41/50] Q41 - Code Review - Easy
+  Q: Review a Python class for Single Responsibility Principle violations.
+  CodX  : 12.05s | score: 0.7949 | cost: $0.003894
+  Opus  : 45.39s | tokens: 55 in / 3299 out | cost: $0.24825
+  Opus score (cosine): 0.7376
+  >>> WINNER: CodX (0.7949 vs 0.7376)
+
+[18:13:30] [42/50] Q42 - Code Review - Easy
+  Q: Review a REST controller for proper HTTP status code usage.
+  CodX  : 8.05s | score: 0.8593 | cost: $0.001476
+  Opus  : 41.21s | tokens: 54 in / 3714 out | cost: $0.27936
+  Opus score (cosine): 0.8125
+  >>> WINNER: CodX (0.8593 vs 0.8125)
+
+[18:14:22] [43/50] Q43 - Code Review - Easy
+  Q: Review a logging implementation for sensitive data leakage in log output.
+  CodX  : 5.89s | score: 0.8596 | cost: $0.000843
+  Opus  : 57.94s | tokens: 57 in / 4096 out | cost: $0.308055
+  Opus score (cosine): 0.7224
+  >>> WINNER: CodX (0.8596 vs 0.7224)
+
+[18:15:28] [44/50] Q44 - Code Review - Medium
+  Q: Review a database migration script for backward compatibility and rollback safety.
+  CodX  : 5.61s | score: 0.8691 | cost: $0.00094
+  Opus  : 32.78s | tokens: 56 in / 1839 out | cost: $0.138765
+  Opus score (cosine): 0.8399
+  >>> WINNER: CodX (0.8691 vs 0.8399)
+
+[18:16:09] [45/50] Q45 - Code Review - Medium
+  Q: Review an async event handler for proper backpressure and error propagation.
+  CodX  : 10.32s | score: 0.8193 | cost: $0.001614
+  Opus  : 56.04s | tokens: 59 in / 3709 out | cost: $0.27906
+  Opus score (cosine): 0.7389
+  >>> WINNER: CodX (0.8193 vs 0.7389)
+
+[18:17:17] [46/50] Q46 - Code Review - Medium
+  Q: Review a feature flag implementation for race conditions and stale state.
+  CodX  : 4.35s | score: 0.7926 | cost: $0.00076
+  Opus  : 61.04s | tokens: 56 in / 4096 out | cost: $0.30804
+  Opus score (cosine): 0.7102
+  >>> WINNER: CodX (0.7926 vs 0.7102)
+
+[18:18:25] [47/50] Q47 - Code Review - Hard
+  Q: Review a custom ORM query builder for N+1 queries and connection management.
+  CodX  : 11.69s | score: 0.801 | cost: $0.000824
+  Opus  : 52.84s | tokens: 60 in / 4096 out | cost: $0.3081
+  Opus score (cosine): 0.7792
+  >>> WINNER: CodX (0.801 vs 0.7792)
+
+[18:19:32] [48/50] Q48 - Code Review - Hard
+  Q: Review a rate limiting middleware for distributed bypass and clock skew issues.
+  CodX  : 13.97s | score: 0.7962 | cost: $0.005252
+  Opus  : 63.61s | tokens: 57 in / 4096 out | cost: $0.308055
+  Opus score (cosine): 0.7145
+  >>> WINNER: CodX (0.7962 vs 0.7145)
+
+[18:20:52] [49/50] Q49 - Code Review - Hard
+  Q: Review a CQRS implementation for eventual consistency edge cases.
+  CodX  : 10.5s | score: 0.8333 | cost: $0.001571
+  Opus  : TIMEOUT after 333.03s
+  >>> WINNER: CodX (0.8333 vs timeout)
+
+[18:26:38] [50/50] Q50 - Code Review - Hard
+  Q: Full architecture review of a serverless event-driven order processing pipeline.
+  CodX  : 7.87s | score: 0.796 | cost: $0.001018
+  Opus  : 56.86s | tokens: 57 in / 4096 out | cost: $0.308055
+  Opus score (cosine): 0.7359
+  >>> WINNER: CodX (0.796 vs 0.7359)
+
+==============================================
+ BENCHMARK V4 COMPLETE
+ CodX vs Claude Opus 4.6 (Cosine)
+==============================================
+ Questions   : 50
+ CodX wins   : 41 (82%)
+ Opus wins   : 2 (4%)
+ Ties        : 7 (14%)
+ CodX avg    : 81.0%
+ Opus avg    : 76.2% (49 valid responses)
+ CodX cost   : $0.17
+ Opus cost   : $4.53
+ CodX avg time : 12.2s
+ Opus avg time : 50.3s
+==============================================

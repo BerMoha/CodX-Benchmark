@@ -1,6 +1,6 @@
 # =============================================================================
 # CodX v3 (Race 11) - Benchmark solo
-# 50 questions across 5 domains - 11 models race mode, first 3 scored
+# 50 questions across 5 domains - CodX parallel scoring
 # CodX only - no competitor, no external scorer
 # Folder: C:\Users\Berkani\Desktop\Benchmark
 # =============================================================================
@@ -98,27 +98,27 @@ $DomainConfig = @{
     "Generate Code" = @{
         Endpoint    = "/generate"
         AnswerField = "final_output"
-        Models      = "11 models race mode - first 3 scored"
+        Models      = "CodX parallel scoring"
     }
     "Security Audit" = @{
         Endpoint    = "/audit/security"
         AnswerField = "audit_report"
-        Models      = "11 models race mode - first 3 scored"
+        Models      = "CodX parallel scoring"
     }
     "System Audit" = @{
         Endpoint    = "/audit/system"
         AnswerField = "audit_report"
-        Models      = "11 models race mode - first 3 scored"
+        Models      = "CodX parallel scoring"
     }
     "Debug & Fix" = @{
         Endpoint    = "/debug"
         AnswerField = "fix_report"
-        Models      = "11 models race mode - first 3 scored"
+        Models      = "CodX parallel scoring"
     }
     "Code Review" = @{
         Endpoint    = "/review"
         AnswerField = "review_report"
-        Models      = "11 models race mode - first 3 scored"
+        Models      = "CodX parallel scoring"
     }
 }
 
@@ -165,7 +165,7 @@ function Write-Log {
 Write-Log "=============================================="
 Write-Log " CodX $CodXVersion - Solo Benchmark"
 Write-Log " 50 questions - 5 domains"
-Write-Log " Architecture: 11 models race mode - first 3 scored"
+Write-Log " Architecture: CodX parallel scoring"
 Write-Log "=============================================="
 Write-Log "Output : $OutputPath"
 Write-Log "Range  : Q$StartFromQuestion to Q$EndAtQuestion"
@@ -181,7 +181,7 @@ if (-not (Test-Path $OutputDir)) {
 }
 
 if (-not (Test-Path $OutputPath)) {
-    "test_id,domain,level,prompt_summary,quality_score,time_s,cost_usd,winner_model,date" |
+    "test_id,domain,level,prompt_summary,quality_score,time_s,cost_usd,date" |
         Out-File -FilePath $OutputPath -Encoding UTF8
     Write-Log "Created: $OutputFile"
 } else {
@@ -230,15 +230,13 @@ foreach ($q in $toRun) {
         $elapsed = [math]::Round(((Get-Date) - $start).TotalSeconds, 2)
         $cost    = [math]::Round($resp.total_cost_usd, 6)
         $quality = $resp.quality_score
-        $winner  = $resp.tournament_winner
-
-        Write-Log "  OK: ${elapsed}s | cost: `$$cost | quality: $quality | winner: $winner" "OK"
+        Write-Log "  OK: ${elapsed}s | cost: `$$cost | quality: $quality" "OK"
 
         $totalCost += $cost
         $totalTime += $elapsed
 
         $summary = ($q.Text.Substring(0, [math]::Min(55, $q.Text.Length))) -replace ',',';'
-        $row = "$($q.Id),$($q.Domain),$($q.Level),$summary,$quality,$elapsed,$cost,$winner,$BenchmarkDate"
+        $row = "$($q.Id),$($q.Domain),$($q.Level),$summary,$quality,$elapsed,$cost,$BenchmarkDate"
         Add-Content -Path $OutputPath -Value $row -Encoding UTF8
 
     } catch {

@@ -1,9 +1,8 @@
 # =============================================================================
-# CodX vs Claude Sonnet 4.6 - Cosine Similarity Benchmark
+# CodX vs Claude Opus 4.6 - Cosine Similarity Benchmark (V4)
 # 50 questions across 5 domains
 # Both scored by same cosine metric (local embedding model)
 # No external scorer - zero cost scoring
-# Folder: C:\Users\Berkani\Desktop\Benchmark
 # =============================================================================
 
 param(
@@ -11,7 +10,7 @@ param(
     [string]$CodXApiKey      = $env:CODX_API_KEY,
     [string]$OpenRouterKey   = $env:OPENROUTER_API_KEY,
     [string]$OutputDir       = "C:\Users\Berkani\Desktop\Benchmark",
-    [string]$OutputFile      = "codx_vs_sonnet_cosine.csv",
+    [string]$OutputFile      = "codx_vs_opus_cosine.csv",
     [int]$StartFromQuestion  = 1,
     [int]$EndAtQuestion      = 50,
     [switch]$DryRun
@@ -22,17 +21,17 @@ $ErrorActionPreference = "Stop"
 
 $BenchmarkDate  = (Get-Date -Format "yyyy-MM-dd")
 $OutputPath     = Join-Path $OutputDir $OutputFile
-$LogPath        = Join-Path $OutputDir ("cosine_log_" + (Get-Date -Format "yyyyMMdd_HHmmss") + ".txt")
+$LogPath        = Join-Path $OutputDir ("opus_log_" + (Get-Date -Format "yyyyMMdd_HHmmss") + ".txt")
 
-$SonnetModel    = "anthropic/claude-sonnet-4-6"
+$OpusModel      = "anthropic/claude-opus-4-6"
 $OpenRouterUrl  = "https://openrouter.ai/api/v1/chat/completions"
 
-# Claude Sonnet 4.6 pricing on OpenRouter (USD per 1M tokens)
-$SonnetInputPricePerM  = 3.0
-$SonnetOutputPricePerM = 15.0
+# Claude Opus 4.6 pricing on OpenRouter (USD per 1M tokens)
+$OpusInputPricePerM  = 5.0
+$OpusOutputPricePerM = 25.0
 
 # =============================================================================
-# MISSION PROMPTS (identical to CodX engine.py for fair comparison)
+# MISSION PROMPTS
 # =============================================================================
 
 $MissionPrompts = @{
@@ -44,69 +43,69 @@ $MissionPrompts = @{
 }
 
 # =============================================================================
-# QUESTIONS (same 50 as Race11 benchmark for comparability)
+# QUESTIONS (same 50 as V3 for comparability)
 # =============================================================================
 
 $Benchmark = @{
     "Generate Code" = @(
-        "Q1  [Easy] Return the first non-repeating character in a string."
-        "Q2  [Easy] Group users by country from a list of dictionaries."
-        "Q3  [Easy] Fetch weather data with error handling."
-        "Q4  [Medium] SQL query for top customers in last 30 days."
-        "Q5  [Medium] Implement a Go worker pool."
-        "Q6  [Medium] Implement an O(1) LRU cache."
-        "Q7  [Hard] Distributed rate limiter using Redis."
-        "Q8  [Hard] Kafka consumer with retries and DLQ."
-        "Q9  [Hard] Trie with autocomplete support."
-        "Q10 [Hard] URL shortener backend API."
+        "Q1  [Easy] Write a function that checks if two strings are anagrams of each other."
+        "Q2  [Easy] Build a CLI tool that converts CSV to JSON."
+        "Q3  [Easy] Implement a stack using two queues."
+        "Q4  [Medium] Build a REST API endpoint that paginates and filters a product catalog."
+        "Q5  [Medium] Implement a thread-safe bounded blocking queue in Java."
+        "Q6  [Medium] Write a recursive descent parser for arithmetic expressions with operator precedence."
+        "Q7  [Hard] Implement a B-tree with insert, delete, and range query operations."
+        "Q8  [Hard] Build a real-time collaborative text editor backend using operational transforms."
+        "Q9  [Hard] Implement a consistent hashing ring with virtual nodes and replication."
+        "Q10 [Hard] Build an event sourcing framework with snapshots and replay."
     )
     "Security Audit" = @(
-        "Q11 [Easy] Identify SQL injection vulnerability."
-        "Q12 [Easy] Find hardcoded secret exposure."
-        "Q13 [Easy] Review weak authentication logic."
-        "Q14 [Medium] Detect path traversal issue."
-        "Q15 [Medium] Detect command injection risk."
-        "Q16 [Medium] Audit JWT validation logic."
-        "Q17 [Hard] Identify SSRF vulnerability."
-        "Q18 [Hard] Audit public cloud storage configuration."
-        "Q19 [Hard] Review unsafe object deserialization."
-        "Q20 [Hard] Full login endpoint security assessment."
+        "Q11 [Easy] Audit a file upload endpoint for unrestricted file type vulnerabilities."
+        "Q12 [Easy] Review a password reset flow for account enumeration risks."
+        "Q13 [Easy] Check an API response for excessive data exposure in error messages."
+        "Q14 [Medium] Audit an OAuth2 implementation for token leakage via redirect URI manipulation."
+        "Q15 [Medium] Review a GraphQL API for introspection abuse and nested query DoS."
+        "Q16 [Medium] Audit a WebSocket connection handler for origin validation and message injection."
+        "Q17 [Hard] Review a multi-tenant SaaS application for cross-tenant data leakage."
+        "Q18 [Hard] Audit a cryptographic key management system for key rotation and storage flaws."
+        "Q19 [Hard] Analyze a microservices mesh for service-to-service authentication bypass."
+        "Q20 [Hard] Full security assessment of a payment processing webhook handler."
     )
     "System Audit" = @(
-        "Q21 [Easy] Identify single points of failure."
-        "Q22 [Easy] Audit logging strategy."
-        "Q23 [Easy] Evaluate backup frequency."
-        "Q24 [Medium] Improve microservice resilience."
-        "Q25 [Medium] Audit database scaling approach."
-        "Q26 [Medium] Review CI/CD pipeline gaps."
-        "Q27 [Hard] Kubernetes cluster audit."
-        "Q28 [Hard] Incident response readiness review."
-        "Q29 [Hard] Event-driven architecture audit."
-        "Q30 [Hard] Enterprise architecture modernization."
+        "Q21 [Easy] Evaluate DNS configuration for redundancy and failover."
+        "Q22 [Easy] Audit a cron job scheduler for silent failure detection."
+        "Q23 [Easy] Review a health check endpoint for accuracy and depth."
+        "Q24 [Medium] Audit a message queue system for message loss and ordering guarantees."
+        "Q25 [Medium] Review a caching layer for cache stampede and thundering herd problems."
+        "Q26 [Medium] Audit a blue-green deployment pipeline for rollback safety."
+        "Q27 [Hard] Review a distributed tracing implementation for observability gaps."
+        "Q28 [Hard] Audit a multi-region active-active database replication strategy."
+        "Q29 [Hard] Review a chaos engineering framework for blast radius containment."
+        "Q30 [Hard] Full audit of a zero-downtime migration strategy for a 10TB database."
     )
     "Debug & Fix" = @(
-        "Q31 [Easy] Fix off-by-one error."
-        "Q32 [Easy] Fix null reference bug."
-        "Q33 [Easy] Fix infinite loop."
-        "Q34 [Medium] Fix async/await bug."
-        "Q35 [Medium] Fix race condition."
-        "Q36 [Medium] Fix database connection leak."
-        "Q37 [Hard] Resolve deadlock."
-        "Q38 [Hard] Fix memory leak."
-        "Q39 [Hard] Investigate CrashLoopBackOff."
-        "Q40 [Hard] Analyze production outage."
+        "Q31 [Easy] Fix a timezone conversion bug that shows wrong times for UTC offsets."
+        "Q32 [Easy] Fix a CSS flexbox layout that breaks on mobile viewport widths."
+        "Q33 [Easy] Fix a pagination bug that skips records when items are deleted mid-page."
+        "Q34 [Medium] Fix a connection pool exhaustion causing intermittent HTTP 503 errors."
+        "Q35 [Medium] Fix a circular dependency between three Python modules causing ImportError."
+        "Q36 [Medium] Fix a React useEffect hook that causes an infinite re-render loop with stale closures."
+        "Q37 [Hard] Debug a distributed transaction that leaves phantom records across two databases."
+        "Q38 [Hard] Fix a garbage collection pause causing latency spikes in a Java gRPC service."
+        "Q39 [Hard] Debug a split-brain scenario in a Redis Sentinel cluster after network partition."
+        "Q40 [Hard] Fix a data corruption bug caused by concurrent schema migrations on a live PostgreSQL database."
     )
     "Code Review" = @(
-        "Q41 [Easy] Improve readability."
-        "Q42 [Easy] Remove duplicate logic."
-        "Q43 [Easy] Improve error handling."
-        "Q44 [Medium] Optimize performance."
-        "Q45 [Medium] Review resource management."
-        "Q46 [Medium] Improve API design."
-        "Q47 [Hard] Review database scalability."
-        "Q48 [Hard] Review XSS vulnerability."
-        "Q49 [Hard] Review concurrent access bug."
-        "Q50 [Hard] Full service review."
+        "Q41 [Easy] Review a Python class for Single Responsibility Principle violations."
+        "Q42 [Easy] Review a REST controller for proper HTTP status code usage."
+        "Q43 [Easy] Review a logging implementation for sensitive data leakage in log output."
+        "Q44 [Medium] Review a database migration script for backward compatibility and rollback safety."
+        "Q45 [Medium] Review an async event handler for proper backpressure and error propagation."
+        "Q46 [Medium] Review a feature flag implementation for race conditions and stale state."
+        "Q47 [Hard] Review a custom ORM query builder for N+1 queries and connection management."
+        "Q48 [Hard] Review a rate limiting middleware for distributed bypass and clock skew issues."
+        "Q49 [Hard] Review a CQRS implementation for eventual consistency edge cases."
+        "Q50 [Hard] Full architecture review of a serverless event-driven order processing pipeline."
     )
 }
 
@@ -188,10 +187,10 @@ function Invoke-CodX {
         -Body $bodyBytes -TimeoutSec 120
 }
 
-function Invoke-Sonnet {
+function Invoke-Opus {
     param([string]$SystemPrompt, [string]$UserPrompt)
     $reqBody = @{
-        model = $SonnetModel
+        model = $OpusModel
         messages = @(
             @{ role = "system"; content = $SystemPrompt }
             @{ role = "user"; content = $UserPrompt }
@@ -202,7 +201,7 @@ function Invoke-Sonnet {
     return Invoke-RestMethod -Uri $OpenRouterUrl -Method POST `
         -ContentType "application/json; charset=utf-8" `
         -Headers @{ "Authorization" = "Bearer $OpenRouterKey" } `
-        -Body $bodyBytes -TimeoutSec 120
+        -Body $bodyBytes -TimeoutSec 180
 }
 
 function Invoke-CodXScore {
@@ -221,7 +220,7 @@ function Invoke-CodXScore {
 # =============================================================================
 
 Write-Log "=============================================="
-Write-Log " CodX vs Claude Sonnet 4.6"
+Write-Log " CodX vs Claude Opus 4.6 (V4)"
 Write-Log " Cosine Similarity Benchmark"
 Write-Log " 50 questions - 5 domains"
 Write-Log " Scorer: local embedding model (local)"
@@ -245,7 +244,7 @@ if (-not (Test-Path $OutputDir)) {
     New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
 }
 
-$csvHeader = "test_id,domain,level,prompt_summary,codx_score,codx_time_s,codx_cost_usd,sonnet_score,sonnet_time_s,sonnet_cost_usd,winner,date"
+$csvHeader = "test_id,domain,level,prompt_summary,codx_score,codx_time_s,codx_cost_usd,opus_score,opus_time_s,opus_cost_usd,winner,date"
 if (-not (Test-Path $OutputPath)) {
     $csvHeader | Out-File -FilePath $OutputPath -Encoding UTF8
     Write-Log "Created: $OutputFile"
@@ -262,11 +261,11 @@ Write-Log "Running $($toRun.Count) questions..."
 
 $done = 0
 $codxWins = 0
-$sonnetWins = 0
+$opusWins = 0
 $ties = 0
 $failures = 0
 $totalCodxCost = 0.0
-$totalSonnetCost = 0.0
+$totalOpusCost = 0.0
 
 foreach ($q in $toRun) {
     $done++
@@ -285,10 +284,10 @@ foreach ($q in $toRun) {
     $codxCost = 0.0
     $codxOk = $false
 
-    $sonnetScore = 0.0
-    $sonnetTime = 0.0
-    $sonnetCost = 0.0
-    $sonnetOk = $false
+    $opusScore = 0.0
+    $opusTime = 0.0
+    $opusCost = 0.0
+    $opusOk = $false
 
     # ---- STEP 1: Call CodX ----
     try {
@@ -299,43 +298,43 @@ foreach ($q in $toRun) {
         $codxCost = [math]::Round([double]$codxResp.total_cost_usd, 6)
         $codxOk = $true
         $csRound = [math]::Round($codxScore, 4)
-        Write-Log "  CodX   : ${codxTime}s | score: $csRound | cost: `$$codxCost" "OK"
+        Write-Log "  CodX  : ${codxTime}s | score: $csRound | cost: `$$codxCost" "OK"
     } catch {
         $codxTime = [math]::Round(((Get-Date) - $sw).TotalSeconds, 2)
-        Write-Log "  CodX   : FAILED after ${codxTime}s - $_" "ERROR"
+        Write-Log "  CodX  : FAILED after ${codxTime}s - $_" "ERROR"
         $failures++
     }
 
-    # ---- STEP 2: Call Claude Sonnet via OpenRouter ----
-    $sonnetText = ""
+    # ---- STEP 2: Call Claude Opus via OpenRouter ----
+    $opusText = ""
     try {
         $sw = Get-Date
-        $sonnetResp = Invoke-Sonnet -SystemPrompt $sysPrompt -UserPrompt $q.Text
-        $sonnetTime = [math]::Round(((Get-Date) - $sw).TotalSeconds, 2)
-        $sonnetText = [string]$sonnetResp.choices[0].message.content
+        $opusResp = Invoke-Opus -SystemPrompt $sysPrompt -UserPrompt $q.Text
+        $opusTime = [math]::Round(((Get-Date) - $sw).TotalSeconds, 2)
+        $opusText = [string]$opusResp.choices[0].message.content
 
         $inTok = 0
         $outTok = 0
-        if ($sonnetResp.usage) {
-            $inTok = [int]$sonnetResp.usage.prompt_tokens
-            $outTok = [int]$sonnetResp.usage.completion_tokens
+        if ($opusResp.usage) {
+            $inTok = [int]$opusResp.usage.prompt_tokens
+            $outTok = [int]$opusResp.usage.completion_tokens
         }
-        $sonnetCost = [math]::Round(($inTok * $SonnetInputPricePerM + $outTok * $SonnetOutputPricePerM) / 1000000, 6)
-        Write-Log "  Sonnet : ${sonnetTime}s | tokens: $inTok in / $outTok out | cost: `$$sonnetCost" "OK"
+        $opusCost = [math]::Round(($inTok * $OpusInputPricePerM + $outTok * $OpusOutputPricePerM) / 1000000, 6)
+        Write-Log "  Opus  : ${opusTime}s | tokens: $inTok in / $outTok out | cost: `$$opusCost" "OK"
     } catch {
-        $sonnetTime = [math]::Round(((Get-Date) - $sw).TotalSeconds, 2)
-        Write-Log "  Sonnet CALL FAILED after ${sonnetTime}s - $_" "ERROR"
+        $opusTime = [math]::Round(((Get-Date) - $sw).TotalSeconds, 2)
+        Write-Log "  Opus CALL FAILED after ${opusTime}s - $_" "ERROR"
         $failures++
     }
 
-    # ---- STEP 3: Score Sonnet's response via CodX /score endpoint ----
-    if ($sonnetText.Length -gt 0) {
+    # ---- STEP 3: Score Opus response via CodX /score endpoint ----
+    if ($opusText.Length -gt 0) {
         try {
-            $scoreResp = Invoke-CodXScore -Prompt $enrichedPrompt -Response $sonnetText
-            $sonnetScore = [double]$scoreResp.cosine_similarity
-            $ssRound = [math]::Round($sonnetScore, 4)
-            Write-Log "  Sonnet score (cosine): $ssRound" "OK"
-            $sonnetOk = $true
+            $scoreResp = Invoke-CodXScore -Prompt $enrichedPrompt -Response $opusText
+            $opusScore = [double]$scoreResp.cosine_similarity
+            $ssRound = [math]::Round($opusScore, 4)
+            Write-Log "  Opus score (cosine): $ssRound" "OK"
+            $opusOk = $true
         } catch {
             Write-Log "  SCORE FAILED - $_" "ERROR"
             $failures++
@@ -344,39 +343,39 @@ foreach ($q in $toRun) {
 
     # ---- STEP 4: Determine winner ----
     $winner = "error"
-    if ($codxOk -and $sonnetOk) {
-        $diff = [math]::Abs($codxScore - $sonnetScore)
+    if ($codxOk -and $opusOk) {
+        $diff = [math]::Abs($codxScore - $opusScore)
         if ($diff -lt 0.005) {
             $winner = "tie"
             $ties++
-        } elseif ($codxScore -gt $sonnetScore) {
+        } elseif ($codxScore -gt $opusScore) {
             $winner = "CodX"
             $codxWins++
         } else {
-            $winner = "Claude Sonnet"
-            $sonnetWins++
+            $winner = "Claude Opus"
+            $opusWins++
         }
     } elseif ($codxOk) {
         $winner = "CodX"
         $codxWins++
-    } elseif ($sonnetOk) {
-        $winner = "Claude Sonnet"
-        $sonnetWins++
+    } elseif ($opusOk) {
+        $winner = "Claude Opus"
+        $opusWins++
     }
 
     $c1 = [math]::Round($codxScore, 4)
-    $c2 = [math]::Round($sonnetScore, 4)
-    Write-Log "  >>> WINNER: $winner (CodX $c1 vs Sonnet $c2)" "OK"
+    $c2 = [math]::Round($opusScore, 4)
+    Write-Log "  >>> WINNER: $winner (CodX $c1 vs Opus $c2)" "OK"
 
     $totalCodxCost += $codxCost
-    $totalSonnetCost += $sonnetCost
+    $totalOpusCost += $opusCost
 
-    # ---- Write CSV row ----
+    # ---- Write CSV row (no architecture secrets) ----
     $maxLen = [math]::Min(55, $q.Text.Length)
     $summary = ($q.Text.Substring(0, $maxLen)) -replace ',',';'
     $cs = [math]::Round($codxScore, 6)
-    $ss = [math]::Round($sonnetScore, 6)
-    $row = "$($q.Id),$($q.Domain),$($q.Level),$summary,$cs,$codxTime,$codxCost,$ss,$sonnetTime,$sonnetCost,$winner,$BenchmarkDate"
+    $os = [math]::Round($opusScore, 6)
+    $row = "$($q.Id),$($q.Domain),$($q.Level),$summary,$cs,$codxTime,$codxCost,$os,$opusTime,$opusCost,$winner,$BenchmarkDate"
     Add-Content -Path $OutputPath -Value $row -Encoding UTF8
 
     Start-Sleep -Seconds 2
@@ -387,27 +386,25 @@ foreach ($q in $toRun) {
 # =============================================================================
 
 $totalQuestions = $done
-$codxAvg = 0.0
-$sonnetAvg = 0.0
 if ($totalQuestions -gt 0) {
     $codxPctRaw = [math]::Round(($codxWins / $totalQuestions) * 100)
-    $sonnetPctRaw = [math]::Round(($sonnetWins / $totalQuestions) * 100)
+    $opusPctRaw = [math]::Round(($opusWins / $totalQuestions) * 100)
 } else {
     $codxPctRaw = 0
-    $sonnetPctRaw = 0
+    $opusPctRaw = 0
 }
 
 Write-Log "=============================================="
-Write-Log " BENCHMARK COMPLETE"
-Write-Log " CodX vs Claude Sonnet 4.6 (Cosine)"
+Write-Log " BENCHMARK V4 COMPLETE"
+Write-Log " CodX vs Claude Opus 4.6 (Cosine)"
 Write-Log "=============================================="
 Write-Log " Questions   : $totalQuestions"
 Write-Log " CodX wins   : $codxWins ($codxPctRaw pct)"
-Write-Log " Sonnet wins : $sonnetWins ($sonnetPctRaw pct)"
-Write-Log " Ties         : $ties"
-Write-Log " Failures     : $failures"
-Write-Log " CodX cost    : `$$([math]::Round($totalCodxCost, 4))"
-Write-Log " Sonnet cost  : `$$([math]::Round($totalSonnetCost, 4))"
+Write-Log " Opus wins   : $opusWins ($opusPctRaw pct)"
+Write-Log " Ties        : $ties"
+Write-Log " Failures    : $failures"
+Write-Log " CodX cost   : `$$([math]::Round($totalCodxCost, 4))"
+Write-Log " Opus cost   : `$$([math]::Round($totalOpusCost, 4))"
 Write-Log "----------------------------------------------"
 Write-Log " Results: $OutputPath"
 Write-Log " Log    : $LogPath"

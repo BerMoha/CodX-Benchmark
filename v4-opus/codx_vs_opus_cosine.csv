@@ -1,0 +1,51 @@
+test_id,domain,level,prompt_summary,codx_score,codx_time_s,codx_cost_usd,opus_score,opus_time_s,opus_cost_usd,winner,date
+Q1,Generate Code,Easy,Write a function that checks if two strings are anagram,0.788624,13.22,0.004237,0.735966,16.75,0.026785,CodX,2026-06-20
+Q2,Generate Code,Easy,Build a CLI tool that converts CSV to JSON.,0.817752,14.32,0.004652,0.800828,49.94,0.102605,CodX,2026-06-20
+Q3,Generate Code,Easy,Implement a stack using two queues.,0.691111,14.02,0.0035,0.663141,21.19,0.03395,CodX,2026-06-20
+Q4,Generate Code,Medium,Build a REST API endpoint that paginates and filters a ,0.726541,12.54,0.002865,0.730693,44.83,0.10263,tie,2026-06-20
+Q5,Generate Code,Medium,Implement a thread-safe bounded blocking queue in Java.,0.794118,11.98,0.004247,0.791247,44.24,0.102615,tie,2026-06-20
+Q6,Generate Code,Medium,Write a recursive descent parser for arithmetic express,0.807523,14.12,0.004654,0.806301,50.62,0.10262,tie,2026-06-20
+Q7,Generate Code,Hard,Implement a B-tree with insert; delete; and range query,0.72256,11.2,0.004289,0.715818,56.08,0.102635,CodX,2026-06-20
+Q8,Generate Code,Hard,Build a real-time collaborative text editor backend usi,0.739159,11.61,0.002952,0.719984,52.91,0.10262,CodX,2026-06-20
+Q9,Generate Code,Hard,Implement a consistent hashing ring with virtual nodes ,0.737955,22.79,0.005991,0.733523,53.16,0.102625,tie,2026-06-20
+Q10,Generate Code,Hard,Build an event sourcing framework with snapshots and re,0.689205,13.86,0.004654,0.676899,48.42,0.102615,CodX,2026-06-20
+Q11,Security Audit,Easy,Audit a file upload endpoint for unrestricted file type,0.787794,12.92,0.002948,0.789114,61.5,0.102655,tie,2026-06-20
+Q12,Security Audit,Easy,Review a password reset flow for account enumeration ri,0.813801,13.74,0.004815,0.724904,64.49,0.102185,CodX,2026-06-20
+Q13,Security Audit,Easy,Check an API response for excessive data exposure in er,0.821832,12.34,0.003598,0.671011,58.76,0.10264,CodX,2026-06-20
+Q14,Security Audit,Medium,Audit an OAuth2 implementation for token leakage via re,0.767754,17.03,0.006188,0.783715,62.43,0.102665,Claude Opus,2026-06-20
+Q15,Security Audit,Medium,Review a GraphQL API for introspection abuse and nested,0.785178,16.6,0.006064,0.769204,62.03,0.10266,CodX,2026-06-20
+Q16,Security Audit,Medium,Audit a WebSocket connection handler for origin validat,0.825629,13.52,0.004818,0.812572,57.23,0.10265,CodX,2026-06-20
+Q17,Security Audit,Hard,Review a multi-tenant SaaS application for cross-tenant,0.825553,15.94,0.003735,0.754715,59.17,0.10267,CodX,2026-06-20
+Q18,Security Audit,Hard,Audit a cryptographic key management system for key rot,0.774345,16.97,0.004819,0.735188,57.48,0.10266,CodX,2026-06-20
+Q19,Security Audit,Hard,Analyze a microservices mesh for service-to-service aut,0.769581,13.97,0.004818,0.727817,60.66,0.10266,CodX,2026-06-20
+Q20,Security Audit,Hard,Full security assessment of a payment processing webhoo,0.780828,17.5,0.004816,0.730453,57.03,0.10263,CodX,2026-06-20
+Q21,System Audit,Easy,Evaluate DNS configuration for redundancy and failover.,0.80897,13.67,0.004818,0.754241,56.32,0.102635,CodX,2026-06-20
+Q22,System Audit,Easy,Audit a cron job scheduler for silent failure detection,0.831846,12.96,0.00307,0.808761,55.87,0.10264,CodX,2026-06-20
+Q23,System Audit,Easy,Review a health check endpoint for accuracy and depth.,0.824107,16.49,0.004758,0.703158,57.22,0.10263,CodX,2026-06-20
+Q24,System Audit,Medium,Audit a message queue system for message loss and order,0.801047,12.29,0.003752,0.762541,58.69,0.10265,CodX,2026-06-20
+Q25,System Audit,Medium,Review a caching layer for cache stampede and thunderin,0.834722,15.79,0.004235,0.658406,61.87,0.10266,CodX,2026-06-20
+Q26,System Audit,Medium,Audit a blue-green deployment pipeline for rollback saf,0.847961,12.86,0.004158,0.76022,60.99,0.102645,CodX,2026-06-20
+Q27,System Audit,Hard,Review a distributed tracing implementation for observa,0.857607,14.8,0.003869,0.726402,64.85,0.102635,CodX,2026-06-20
+Q28,System Audit,Hard,Audit a multi-region active-active database replication,0.840236,18.14,0.00398,0.784468,56.91,0.10265,CodX,2026-06-20
+Q29,System Audit,Hard,Review a chaos engineering framework for blast radius c,0.840114,16.33,0.004125,0.812821,64.12,0.102635,CodX,2026-06-20
+Q30,System Audit,Hard,Full audit of a zero-downtime migration strategy for a ,0.827905,16.16,0.004141,0.79817,62.48,0.102665,CodX,2026-06-20
+Q31,Debug & Fix,Easy,Fix a timezone conversion bug that shows wrong times fo,0.915037,3.18,0.000634,0.780461,29.62,0.04845,CodX,2026-06-20
+Q32,Debug & Fix,Easy,Fix a CSS flexbox layout that breaks on mobile viewport,0.909028,8.37,0.001043,0.84657,27,0.039425,CodX,2026-06-20
+Q33,Debug & Fix,Easy,Fix a pagination bug that skips records when items are ,0.822298,14.19,0.002757,0.79653,45.96,0.065985,CodX,2026-06-20
+Q34,Debug & Fix,Medium,Fix a connection pool exhaustion causing intermittent H,0.800255,15.34,0.003045,0.728086,54.33,0.08986,CodX,2026-06-20
+Q35,Debug & Fix,Medium,Fix a circular dependency between three Python modules ,0.821133,10.03,0.003025,0.775077,25.28,0.039665,CodX,2026-06-20
+Q36,Debug & Fix,Medium,Fix a React useEffect hook that causes an infinite re-r,0.893141,7.84,0.002342,0.867588,43.74,0.073405,CodX,2026-06-20
+Q37,Debug & Fix,Hard,Debug a distributed transaction that leaves phantom rec,0.775698,8.62,0.002261,0.776803,56.13,0.10269,tie,2026-06-20
+Q38,Debug & Fix,Hard,Fix a garbage collection pause causing latency spikes i,0.837739,12.05,0.001858,0.862898,62.24,0.10272,Claude Opus,2026-06-20
+Q39,Debug & Fix,Hard,Debug a split-brain scenario in a Redis Sentinel cluste,0.839813,14.6,0.00404,0.788799,56.31,0.10271,CodX,2026-06-20
+Q40,Debug & Fix,Hard,Fix a data corruption bug caused by concurrent schema m,0.879236,13.76,0.001646,0.877599,63,0.102715,tie,2026-06-20
+Q41,Code Review,Easy,Review a Python class for Single Responsibility Princip,0.794915,12.05,0.003894,0.737559,45.39,0.08275,CodX,2026-06-20
+Q42,Code Review,Easy,Review a REST controller for proper HTTP status code us,0.859255,8.05,0.001476,0.812466,41.21,0.09312,CodX,2026-06-20
+Q43,Code Review,Easy,Review a logging implementation for sensitive data leak,0.859648,5.89,0.000843,0.722399,57.94,0.102685,CodX,2026-06-20
+Q44,Code Review,Medium,Review a database migration script for backward compati,0.869088,5.61,0.00094,0.839862,32.78,0.046255,CodX,2026-06-20
+Q45,Code Review,Medium,Review an async event handler for proper backpressure a,0.819324,10.32,0.001614,0.738925,56.04,0.09302,CodX,2026-06-20
+Q46,Code Review,Medium,Review a feature flag implementation for race condition,0.792551,4.35,0.00076,0.710171,61.04,0.10268,CodX,2026-06-20
+Q47,Code Review,Hard,Review a custom ORM query builder for N+1 queries and c,0.801023,11.69,0.000824,0.779215,52.84,0.1027,CodX,2026-06-20
+Q48,Code Review,Hard,Review a rate limiting middleware for distributed bypas,0.796152,13.97,0.005252,0.714515,63.61,0.102685,CodX,2026-06-20
+Q49,Code Review,Hard,Review a CQRS implementation for eventual consistency e,0.833301,10.5,0.001571,0,333.03,0,CodX,2026-06-20
+Q50,Code Review,Hard,Full architecture review of a serverless event-driven o,0.796035,7.87,0.001018,0.735887,56.86,0.102685,CodX,2026-06-20
